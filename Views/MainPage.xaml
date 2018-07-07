@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CameraExample.Views.MainPage">
+	<ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="125" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Photoshizzle" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+
+            <Button x:Name="SaveButton" IsVisible="false" Clicked="SaveButton_Clicked" Text="Save" VerticalOptions="Center" HorizontalOptions="Center"  Grid.Column="0" Grid.Row="1" />
+            <Button x:Name="CaptureButton" Clicked="CaptureButton_Clicked" Text="Take Photo" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1" Grid.Row="1" />
+            <Button x:Name="DeleteButton" IsVisible="false" Clicked="DeleteButton_Clicked" Text="Delete" VerticalOptions="Center" HorizontalOptions="Center"  Grid.Column="2" Grid.Row="1" />
+
+            <Label x:Name="StatusLabel" Text="" HorizontalOptions="Center" VerticalOptions="Center"
+                    Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" />
+            
+            <Image x:Name="PageImage" VerticalOptions="Center" HorizontalOptions="Center"
+                    Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" />
+
+            <ScrollView Orientation="Horizontal" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3">
+                <StackLayout x:Name="PhotoRollList" Orientation="Horizontal" MinimumWidthRequest="1800"></StackLayout>
+            </ScrollView>
+
+        </Grid>
+
+	</ContentPage.Content>
+</ContentPage>
